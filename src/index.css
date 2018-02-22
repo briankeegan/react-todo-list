@@ -2,4 +2,52 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color: #2E294E;
+  background: #F4FAFF;
+  font-family: monospace;
+  font-size: 16px;
+}
+.container {
+  padding: 0 20%;
+  text-align: center;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+li {
+  cursor: pointer;
+  list-style: none;
+  padding-left:0;
+}
+input[type=text] {
+  font-style: italic;
+  font-size: 16px;
+  text-align: center;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+input[type=text]:focus {
+  outline: none;
+  background: #F1E9DA;
+  font-style: normal;
+}
+form {
+  padding-left: 30px;
+}
+button {
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 30px;
+  padding: 10px;
+  font-size: 17px;
+  background: #541388;
+  color: #F1E9DA;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+}
+button:active {
+  background: #2E294E;
 }
