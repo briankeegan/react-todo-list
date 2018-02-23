@@ -53,3 +53,8 @@ Want to know [more?](https://reactjs.org/docs/components-and-props.html)
 ####  Create sample layout of what we want
  - Render header
  - toDO items, we'll use an unordered list.
+
+### Adding variables with props
+-  Replace the name and listItems in the `App.js`
+-  Create an object to hold those values
+-  Pass those into the Component in `index.js`

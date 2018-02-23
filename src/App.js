@@ -5,11 +5,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>React Todo List</h1>
+        <h1>{this.props.todoName} Todo List</h1>
         <ul>
-          <li>Eat ice cream</li>
-          <li>Do HW</li>
-          <li>Go to bed</li>
+          <li>{this.props.todoItems[0]}</li>
+          <li>{this.props.todoItems[1]}</li>
+          <li>{this.props.todoItems[2]}</li>
         </ul>
       </div>
     );
