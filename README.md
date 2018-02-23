@@ -8,6 +8,8 @@ Follow along on the demo branch
 -  clone and fork
 - `npm install`
 
+##  OR
+
 #### Install and start
 -  `npx create-react-app todo`
 -  `cd todo`
