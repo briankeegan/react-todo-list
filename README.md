@@ -3,6 +3,11 @@
 ### To see step by step...
 Follow along on the demo branch
 
+### Intial
+
+-  clone and fork
+- `npm install`
+
 #### Install and start
 -  `npx create-react-app todo`
 -  `cd todo`
