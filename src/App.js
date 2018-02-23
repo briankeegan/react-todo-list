@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Item from './Item'
 
 class App extends Component {
   render() {
@@ -7,9 +8,9 @@ class App extends Component {
       <div>
         <h1>{this.props.todoName} Todo List</h1>
         <ul>
-          <li>{this.props.todoItems[0]}</li>
-          <li>{this.props.todoItems[1]}</li>
-          <li>{this.props.todoItems[2]}</li>
+          <Item body={this.props.todoItems[0]} />
+          <Item body={this.props.todoItems[1]} />
+          <Item body={this.props.todoItems[2]} />
         </ul>
       </div>
     );

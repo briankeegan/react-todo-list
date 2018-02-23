@@ -57,4 +57,10 @@ Want to know [more?](https://reactjs.org/docs/components-and-props.html)
 ### Adding variables with props
 -  Replace the name and listItems in the `App.js`
 -  Create an object to hold those values
--  Pass those into the Component in `index.js`
+-  Pass the object's properties into the Component in `index.js`
+
+### Make modular by using Item component
+-  Create Item component
+-  Copy content from App.js, and update (rename and clear)
+- Import Item with `import Item from './Item'`
+-  Update `App.js` to use imported Component
