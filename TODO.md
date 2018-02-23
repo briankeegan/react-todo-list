@@ -126,3 +126,6 @@ We'll do this by making the creating a state version of it.
 -  Create method which resets state of todoItems to array supplied in `index.js`
 - Add const todo, to hold and pass value of props
 - Create button, and add click event
+
+##### Notes
+-  Confused by functionality of button
