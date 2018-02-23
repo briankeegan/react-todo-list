@@ -15,7 +15,7 @@ Follow along on the demo branch
 -  `cd todo`
 -  `npm start`
 
-#### Remove 'extra' code
+## 1.  Remove 'extra' code
   Remove code from: `App.js`
 
 Leave registerServiceWorker.
@@ -60,41 +60,42 @@ We'll get to props, but for now, just notice the syntacial difference.
 
 Want to know [more?](https://reactjs.org/docs/components-and-props.html)
 
-####  Create sample layout of what we want
+##  2.  Create sample layout of what we want
  - Render header
  - toDO items, we'll use an unordered list.
 
-### Adding variables with props
+###  3.  Adding variables with props
 -  Replace the name and listItems in the `App.js`
--  Create an object to hold those values
+-  Create an object to hold those values in `index.js`
 -  Pass the object's properties into the Component in `index.js`
 
-### Make modular by using Item Component
+### 4.  Make modular by using Item Component
 -  Create Item component
 -  Copy content from App.js, and update (rename and clear)
 - Import Item with `import Item from './Item'`
 -  Update `App.js` to use imported Component
 
-### Use for loop to add all items
+### 5.  Use for loop to add all items
 
 -  In `App.js.`'s render, but above the ruturn, create `const todoItemsArray`
 - map over `this.props.todoItems` using Items Component
 - Replace previous `<Item />` with `{todoItemsArray}`
 - Note, we add a key.  Learn more about why they are important [here](https://blog.arkency.com/2014/10/react-dot-js-and-dynamic-children-why-the-keys-are-important/) or [here](https://reactjs.org/docs/lists-and-keys.html)
-- Add an item to `myTodo.items` in `index.js`.  Pretty cool.
+- (optional) Add an item to `myTodo.items` in `index.js`.  Pretty cool.
 
-### Setting state to toggle class for checkoff
+### 6.  Setting state to toggle class for checkoff
 
 -  In `Items.js`, above `render` add [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor), and pass in props
 -  invoke the super
--  assign `state` the property active to false.
+-  assign `state` the property `active` to `false`.
 - Below lets create a method `toggleClass`
 - All it does is toggle the value of the state
+- `this.setState( { active: !this.state.active } )`
 - Next add an `onClick` (NOT `onclick`) to li which invokes the toggleClass method. `onClick={e => this.toggleClass()}`
 - Next, lets get the state involved.
 - We'll add a ternary asignment to `className`
-- If `state.active` is true, it'll add the class `checked`, otherwise we'll set it to null -- which will remove class from the element altogether.
 - `className={this.state.active ? 'checked' : null }>{this.props.item}`
+- If `state.active` is true, it'll add the class `checked`, otherwise we'll set it to null -- which will remove class from the element altogether.
 
 ##### Notes on states, props, classes.
 -  By calling super, we continue to get all benefits/methods of Reacts Component. That's why we imported it.
@@ -105,7 +106,7 @@ Want to know [more?](https://reactjs.org/docs/components-and-props.html)
 - You can pass assign a prop's value to a state, but we'll get to that later (time permitting!).
 - Also, we're passing in props, into constructor and e into toggleClass for conventions sake.  Will work without, but pass them in case we need it later, don't want to be looking!
 
-###  Make todoItemsArray mutable
+###  7.   Make todoItemsArray mutable
 
 We'll do this by making the creating a state version of it.
 -  Create construcor, passing in `props`
@@ -113,22 +114,21 @@ We'll do this by making the creating a state version of it.
 -  declare state as an object with the property `todoItems` assigned to `props.todoItems`
 - in the map iteration, change `props` to `state`
 
-### Create form to add new items
+### 8.  Create form/input
 -  Create form, with one text input
-- Create `addItem`, which is invoked on `onSubmit`
-- preventDefault, copy `this.state.todoItems` onto obj
-- add `newItem` to obj
-- Change state of todoItems to new obj, and reset newItems state to an empty string
-
-### Make input mutable
-
 -  Add newItem to state object
 -  On the inputs value to that state, `this.state.newItem`
 -  Create method `newItemChange`, which changes the state of the newItem to the current item.
 - set the value of the input to `this.state.newItem`
 - add change event listener, and use `newItemChange` method
 
-### Add remove all items button
+### 9.  On Submit update `todoItems` state
+- Create `addItem`, which is invoked on `onSubmit`
+- preventDefault, copy `this.state.todoItems` onto obj
+- add `newItem` to obj
+- Change state of todoItems to new obj, and reset newItems state to an empty string
+
+### 10.  Add remove all items button
 -  Create method which resets state of todoItems to empty string
 - Create button, and add click event
 
@@ -138,4 +138,4 @@ We'll do this by making the creating a state version of it.
 - Create button, and add click event
 
 ##### Notes
--  Confused by functionality of button
+-  Confused by functionality of button...
