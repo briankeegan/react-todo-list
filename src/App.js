@@ -20,7 +20,15 @@ class App extends Component {
       newItem: ''
     })
   }
-    
+
+  resetToOriginalItems (e) {
+    // const below is neccessary, passing value directly in was not working
+    const todo = this.props.todoItems
+    this.setState({
+      todoItems: todo
+    })
+  }
+
   clearItems (e) {
     this.setState({
       todoItems: []
@@ -46,6 +54,7 @@ class App extends Component {
           <input type="text" placeholder="Add todo item" onChange={e => this.newItemChange(e)} value={this.state.newItem} />
         </form>
         <button onClick={e => this.clearItems(e)}>Remove Todo Items!</button>
+        <button onClick={e => this.resetToOriginalItems(e)}>Reset Items!</button>
       </div>
     );
   }
