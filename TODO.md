@@ -117,3 +117,11 @@ We'll do this by making the creating a state version of it.
 - preventDefault, copy `this.state.todoItems` onto obj
 - add `newItem` to obj
 - Change state of todoItems to new obj, and reset newItems state to an empty string
+
+### Add remove all items button
+-  Create method which resets state of todoItems to empty string
+- Create button, and add click event
+
+### Add reset to orginal state button
+-  Create method which resets state of todoItems to array supplied in `index.js`
+- Create button, and add click event

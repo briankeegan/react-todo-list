@@ -20,7 +20,12 @@ class App extends Component {
       newItem: ''
     })
   }
-
+    
+  clearItems (e) {
+    this.setState({
+      todoItems: []
+    })
+  }
   newItemChange (e) {
     this.setState({
       newItem: e.target.value
@@ -40,6 +45,7 @@ class App extends Component {
         <form onSubmit={e => this.addItem(e)}>
           <input type="text" placeholder="Add todo item" onChange={e => this.newItemChange(e)} value={this.state.newItem} />
         </form>
+        <button onClick={e => this.clearItems(e)}>Remove Todo Items!</button>
       </div>
     );
   }
