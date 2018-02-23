@@ -6,21 +6,26 @@ class App extends Component {
   constructor (props) {
     super()
     this.state = {
-      todoItems: props.todoItems
+      todoItems: props.todoItems,
+      newItem: ''
     }
   }
 
   addItem (e) {
     e.preventDefault()
-    const input = e.target.firstChild
     const todo = this.state.todoItems
-    todo.push(input.value)
+    todo.push(this.state.newItem)
     this.setState({
-      todoItems: todo
+      todoItems: todo,
+      newItem: ''
     })
-    input.value = ''
   }
 
+  newItemChange (e) {
+    this.setState({
+      newItem: e.target.value
+    })
+  }
 
   render() {
     const todoItemsArray = this.state.todoItems.map((todoItem, i) => (
@@ -33,7 +38,7 @@ class App extends Component {
           {todoItemsArray}
         </ul>
         <form onSubmit={e => this.addItem(e)}>
-          <input type="text" placeholder="Add todo item" />
+          <input type="text" placeholder="Add todo item" onChange={e => this.newItemChange(e)} value={this.state.newItem} />
         </form>
       </div>
     );

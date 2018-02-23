@@ -102,3 +102,18 @@ We'll do this by making the creating a state version of it.
 -  invoke super
 -  declare state as an object with the property `todoItems` assigned to `props.todoItems`
 - in the map iteration, change `props` to `state`
+
+### Make input mutable
+
+-  Add newItem to state object
+-  On the inputs value to that state, `this.state.newItem`
+-  Create method `newItemChange`, which changes the state of the newItem to the current item.
+- set the value of the input to `this.state.newItem`
+- add change event listener, and use `newItemChange` method
+
+### Create form to add new items
+-  Create form, with one text input
+- Create `addItem`, which is invoked on `onSubmit`
+- preventDefault, copy `this.state.todoItems` onto obj
+- add `newItem` to obj
+- Change state of todoItems to new obj, and reset newItems state to an empty string
