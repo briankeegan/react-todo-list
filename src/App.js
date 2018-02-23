@@ -10,6 +10,17 @@ class App extends Component {
     }
   }
 
+  addItem (e) {
+    e.preventDefault()
+    const input = e.target.firstChild
+    const todo = this.state.todoItems
+    todo.push(input.value)
+    this.setState({
+      todoItems: todo
+    })
+    input.value = ''
+  }
+
 
   render() {
     const todoItemsArray = this.state.todoItems.map((todoItem, i) => (
@@ -21,6 +32,9 @@ class App extends Component {
         <ul>
           {todoItemsArray}
         </ul>
+        <form onSubmit={e => this.addItem(e)}>
+          <input type="text" placeholder="Add todo item" />
+        </form>
       </div>
     );
   }
