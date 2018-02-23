@@ -3,8 +3,16 @@ import './App.css';
 import Item from './Item'
 
 class App extends Component {
+  constructor (props) {
+    super()
+    this.state = {
+      todoItems: props.todoItems
+    }
+  }
+
+
   render() {
-    const todoItemsArray = this.props.todoItems.map((todoItem, i) => (
+    const todoItemsArray = this.state.todoItems.map((todoItem, i) => (
       <Item body={todoItem} key={i} />
     ))
     return (

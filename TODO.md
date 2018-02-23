@@ -94,3 +94,11 @@ Want to know [more?](https://reactjs.org/docs/components-and-props.html)
 - props, are read only. If you want to change something small, change the state of it.
 - You can pass assign a prop's value to a state, but we'll get to that later (time permitting!).
 - Also, we're passing in props, into constructor and e into toggleClass for conventions sake.  Will work without, but pass them in case we need it later, don't want to be looking!
+
+###  Make todoItemsArray mutable
+
+We'll do this by making the creating a state version of it.
+-  Create construcor, passing in `props`
+-  invoke super
+-  declare state as an object with the property `todoItems` assigned to `props.todoItems`
+- in the map iteration, change `props` to `state`
