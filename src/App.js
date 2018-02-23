@@ -4,13 +4,14 @@ import Item from './Item'
 
 class App extends Component {
   render() {
+    const todoItemsArray = this.props.todoItems.map((todoItem, i) => (
+      <Item body={todoItem} key={i} />
+    ))
     return (
       <div>
         <h1>{this.props.todoName} Todo List</h1>
         <ul>
-          <Item body={this.props.todoItems[0]} />
-          <Item body={this.props.todoItems[1]} />
-          <Item body={this.props.todoItems[2]} />
+          {todoItemsArray}
         </ul>
       </div>
     );

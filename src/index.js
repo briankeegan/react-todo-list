@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const myTodo = {
   title: 'React',
-  items: ['Eat ice cream', 'Do HW', 'Something else']
+  items: ['Eat ice cream', 'Do HW', 'Something else', 'Change here effects page']
 }
 
 ReactDOM.render(

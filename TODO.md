@@ -59,8 +59,16 @@ Want to know [more?](https://reactjs.org/docs/components-and-props.html)
 -  Create an object to hold those values
 -  Pass the object's properties into the Component in `index.js`
 
-### Make modular by using Item component
+### Make modular by using Item Component
 -  Create Item component
 -  Copy content from App.js, and update (rename and clear)
 - Import Item with `import Item from './Item'`
 -  Update `App.js` to use imported Component
+
+### Use for loop to add all items
+
+-  In `App.js.`'s render, but above the ruturn, create `const todoItemsArray`
+- map over `this.props.todoItems` using Items Component
+- Replace previous `<Item />` with `{todoItemsArray}`
+- Note, we add a key.  Learn more about why they are important [here](https://blog.arkency.com/2014/10/react-dot-js-and-dynamic-children-why-the-keys-are-important/) or [here](https://reactjs.org/docs/lists-and-keys.html)
+- Add an item to `myTodo.items` in `index.js`.  Pretty cool.
