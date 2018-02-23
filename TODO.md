@@ -72,3 +72,25 @@ Want to know [more?](https://reactjs.org/docs/components-and-props.html)
 - Replace previous `<Item />` with `{todoItemsArray}`
 - Note, we add a key.  Learn more about why they are important [here](https://blog.arkency.com/2014/10/react-dot-js-and-dynamic-children-why-the-keys-are-important/) or [here](https://reactjs.org/docs/lists-and-keys.html)
 - Add an item to `myTodo.items` in `index.js`.  Pretty cool.
+
+### Setting state to toggle class for checkoff
+
+-  In `Items.js`, above `render` add [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor), and pass in props
+-  invoke the super
+-  assign `state` the property active to false.
+- Below lets create a method `toggleClass`
+- All it does is toggle the value of the state
+- Next add an `onClick` (NOT `onclick`) to li which invokes the toggleClass method. `onClick={e => this.toggleClass()}`
+- Next, lets get the state involved.
+- We'll add a ternary asignment to `className`
+- If `state.active` is true, it'll add the class `checked`, otherwise we'll set it to null -- which will remove class from the element altogether.
+- `className={this.state.active ? 'checked' : null }>{this.props.item}`
+
+##### Notes on states, props, classes.
+-  By calling super, we continue to get all benefits/methods of Reacts Component. That's why we imported it.
+- `this.state` is an object, and can have as many key value pairs as you want to use.
+- Do not try to manually change state outside of the constructor, example `this.state.active = true`
+- Instead change with `this.setState`
+- props, are read only. If you want to change something small, change the state of it.
+- You can pass assign a prop's value to a state, but we'll get to that later (time permitting!).
+- Also, we're passing in props, into constructor and e into toggleClass for conventions sake.  Will work without, but pass them in case we need it later, don't want to be looking!
